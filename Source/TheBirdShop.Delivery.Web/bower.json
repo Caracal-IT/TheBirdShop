@@ -1,0 +1,17 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "jquery": "2.2.4",
+    "bootstrap": "3.3.7"
+  },
+  "overrides":{
+      "bootstrap":{
+        "main": [
+          "less/bootstrap.less",
+          "dist/css/bootstrap.css",
+          "dist/js/bootstrap.js"
+        ]
+      }
+   }
+}
