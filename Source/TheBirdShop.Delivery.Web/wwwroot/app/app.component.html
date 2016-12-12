@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div>
+        <div style="border:1px solid black; height:55px;padding:5px;margin:5px 0 5px 0;">
+            Welcome <u>{{username}}</u>
+            <i class="paypal" style="position:relative;float:right;top:-5px"></i>
+            <div style="margin-right:10px;position:relative;float:right;">Balance R {{ balance|number:'1.2'}}</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">My Birds</div>
+        <div class="col-sm-4">Transfer Cage</div>
+        <div class="col-sm-4">Available Birds</div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="center" style="width:100%;border:1px solid black;min-height:50px;" [dragula]='"bag1"' id="1">
+                <div *ngFor="let bird of birds" id="{{bird.id}}">
+                    <bird *ngIf="bird.basket == 1" [bird]="bird"></bird>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="center" style="width:100%;border:1px solid black;min-height:50px;" [dragula]='"bag1"' id="2">
+                <div *ngFor="let bird of birds" id="{{bird.id}}">
+                    <bird *ngIf="bird.basket == 2" [bird]="bird"></bird>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="center" style="width:100%;border:1px solid black;min-height:50px;" [dragula]='"bag1"' id="3">
+                <div *ngFor="let bird of birds" id="{{bird.id}}">
+                    <bird *ngIf="bird.basket == 3" [bird]="bird"></bird>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

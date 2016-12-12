@@ -1,21 +1,40 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Angular QuickStart</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <title>The Bird Shop</title>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    
+    <link href="libraries/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css">
+
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
     <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>    
     <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="libraries/jquery/dist/jquery.min.js"></script>
+    <script src="libraries/bootstrap/dist/js/bootstrap.min.js"></script>
+
     <script src="systemjs.config.js"></script>
     <script>
-      System.import('app').catch(function(err){ console.error(err); });
+        System.import('app').catch(function (err) { console.error(err); });
     </script>
 </head>
-<body>
-    <my-app>Loading AppComponent content here ...</my-app>
+<body style="padding:0;overflow-x:hidden">
+    <the-bird-shop>
+        <div id="splashScreen"><div style="position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px; /* margin is -0.5 * dimension */
+    margin-top: 13%; 
+    font-weight:bolder">Loading...</div></div>
+    </the-bird-shop>
 </body>
 </html>

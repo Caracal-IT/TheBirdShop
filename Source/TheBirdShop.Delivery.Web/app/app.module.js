@@ -8,9 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+require("./rxjs-extensions");
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var forms_1 = require("@angular/forms");
+var http_1 = require("@angular/http");
+var ng2_dragula_1 = require("ng2-dragula/ng2-dragula");
 var app_component_1 = require("./app.component");
+var shop_service_1 = require("./shop.service");
+var bird_component_1 = require("./bird.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -18,8 +24,17 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent],
+        imports: [
+            platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
+            http_1.HttpModule,
+            ng2_dragula_1.DragulaModule
+        ],
+        declarations: [
+            app_component_1.AppComponent,
+            bird_component_1.BirdComponent
+        ],
+        providers: [shop_service_1.ShopService, ng2_dragula_1.DragulaService],
         bootstrap: [app_component_1.AppComponent]
     }),
     __metadata("design:paramtypes", [])

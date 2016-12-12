@@ -14,9 +14,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".bowerrc" />
+    <None Include=".dockerignore">
+      <DependentUpon>Dockerfile</DependentUpon>
+    </None>
     <None Include="app\app.component.ts" />
     <None Include="app\app.module.ts" />
+    <None Include="app\bird.component.ts" />
+    <None Include="app\bird.ts" />
     <None Include="app\main.ts" />
+    <None Include="app\rxjs-extensions.ts" />
+    <None Include="app\shop.service.ts" />
+    <None Include="docker-compose.override.yml">
+      <DependentUpon>docker-compose.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.vs.debug.yml">
+      <DependentUpon>docker-compose.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.vs.release.yml">
+      <DependentUpon>docker-compose.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.yml" />
+    <None Include="Dockerfile" />
     <None Include="typings.json" />
   </ItemGroup>
   <ItemGroup>
@@ -63,8 +81,52 @@
       <Version>1.1.0</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="wwwroot\app\" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Content Update="app\app.component.html">
+      <DependentUpon>app.component.ts</DependentUpon>
+    </Content>
+    <Content Update="app\app.component.js">
+      <DependentUpon>app.component.ts</DependentUpon>
+    </Content>
+    <Content Update="app\app.component.js.map">
+      <DependentUpon>app.component.js</DependentUpon>
+    </Content>
+    <Content Update="app\app.module.js">
+      <DependentUpon>app.module.ts</DependentUpon>
+    </Content>
+    <Content Update="app\app.module.js.map">
+      <DependentUpon>app.module.js</DependentUpon>
+    </Content>
+    <Content Update="app\bird.component.js">
+      <DependentUpon>bird.component.ts</DependentUpon>
+    </Content>
+    <Content Update="app\bird.component.js.map">
+      <DependentUpon>bird.component.js</DependentUpon>
+    </Content>
+    <Content Update="app\bird.js">
+      <DependentUpon>bird.ts</DependentUpon>
+    </Content>
+    <Content Update="app\bird.js.map">
+      <DependentUpon>bird.js</DependentUpon>
+    </Content>
+    <Content Update="app\main.js">
+      <DependentUpon>main.ts</DependentUpon>
+    </Content>
+    <Content Update="app\main.js.map">
+      <DependentUpon>main.js</DependentUpon>
+    </Content>
+    <Content Update="app\rxjs-extensions.js">
+      <DependentUpon>rxjs-extensions.ts</DependentUpon>
+    </Content>
+    <Content Update="app\rxjs-extensions.js.map">
+      <DependentUpon>rxjs-extensions.js</DependentUpon>
+    </Content>
+    <Content Update="app\shop.service.js">
+      <DependentUpon>shop.service.ts</DependentUpon>
+    </Content>
+    <Content Update="app\shop.service.js.map">
+      <DependentUpon>shop.service.js</DependentUpon>
+    </Content>
+  </ItemGroup>
 </Project>
