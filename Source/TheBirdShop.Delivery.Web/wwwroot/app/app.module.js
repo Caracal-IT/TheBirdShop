@@ -15,8 +15,10 @@ var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var ng2_dragula_1 = require("ng2-dragula/ng2-dragula");
 var app_component_1 = require("./app.component");
-var shop_service_1 = require("./shop.service");
+var shop_component_1 = require("./shop.component");
 var bird_component_1 = require("./bird.component");
+var shop_service_1 = require("./shop.service");
+var app_routing_module_1 = require("./app-routing.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,13 +30,18 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
+            app_routing_module_1.AppRoutingModule,
             ng2_dragula_1.DragulaModule
         ],
         declarations: [
             app_component_1.AppComponent,
-            bird_component_1.BirdComponent
+            bird_component_1.BirdComponent,
+            shop_component_1.ShopComponent
         ],
-        providers: [shop_service_1.ShopService, ng2_dragula_1.DragulaService],
+        providers: [
+            shop_service_1.ShopService,
+            ng2_dragula_1.DragulaService
+        ],
         bootstrap: [app_component_1.AppComponent]
     }),
     __metadata("design:paramtypes", [])

@@ -17,12 +17,14 @@
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
+    <None Include="app\app-routing.module.ts" />
     <None Include="app\app.component.ts" />
     <None Include="app\app.module.ts" />
     <None Include="app\bird.component.ts" />
     <None Include="app\bird.ts" />
     <None Include="app\main.ts" />
     <None Include="app\rxjs-extensions.ts" />
+    <None Include="app\shop.component.ts" />
     <None Include="app\shop.service.ts" />
     <None Include="docker-compose.override.yml">
       <DependentUpon>docker-compose.yml</DependentUpon>
@@ -83,6 +85,15 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <Content Update="app\app-routing.module.js">
+      <DependentUpon>app-routing.module.ts</DependentUpon>
+    </Content>
+    <Content Update="app\app-routing.module.js.map">
+      <DependentUpon>app-routing.module.js</DependentUpon>
+    </Content>
+    <Content Update="app\app.component.css">
+      <DependentUpon>app.component.ts</DependentUpon>
+    </Content>
     <Content Update="app\app.component.html">
       <DependentUpon>app.component.ts</DependentUpon>
     </Content>
@@ -97,6 +108,12 @@
     </Content>
     <Content Update="app\app.module.js.map">
       <DependentUpon>app.module.js</DependentUpon>
+    </Content>
+    <Content Update="app\bird.component.css">
+      <DependentUpon>bird.component.ts</DependentUpon>
+    </Content>
+    <Content Update="app\bird.component.html">
+      <DependentUpon>bird.component.ts</DependentUpon>
     </Content>
     <Content Update="app\bird.component.js">
       <DependentUpon>bird.component.ts</DependentUpon>
@@ -121,6 +138,18 @@
     </Content>
     <Content Update="app\rxjs-extensions.js.map">
       <DependentUpon>rxjs-extensions.js</DependentUpon>
+    </Content>
+    <Content Update="app\shop.component.css">
+      <DependentUpon>shop.component.ts</DependentUpon>
+    </Content>
+    <Content Update="app\shop.component.html">
+      <DependentUpon>shop.component.ts</DependentUpon>
+    </Content>
+    <Content Update="app\shop.component.js">
+      <DependentUpon>shop.component.ts</DependentUpon>
+    </Content>
+    <Content Update="app\shop.component.js.map">
+      <DependentUpon>shop.component.js</DependentUpon>
     </Content>
     <Content Update="app\shop.service.js">
       <DependentUpon>shop.service.ts</DependentUpon>

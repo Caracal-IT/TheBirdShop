@@ -1,13 +1,16 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Text.RegularExpressions;
 
 namespace TheBirdShop.Delivery.Web.Controllers {
     [Route("api/[controller]")]
     public class ShopController : Controller {
         // GET api/values
-        [HttpGet]
+        [HttpGet]        
         public IEnumerable<Bird> Get() {
-            var r = new System.Random(System.DateTime.Now.Millisecond);
+            var seed = Convert.ToInt32(Regex.Match(Guid.NewGuid().ToString(), @"\d+").Value);
+            var r = new Random(seed);
             
             List<Bird> birds = new List<Bird>();
 

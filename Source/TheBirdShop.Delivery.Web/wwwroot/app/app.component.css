@@ -1,0 +1,24 @@
+header {
+    border: 1px solid black;
+    height: 55px;
+    padding: 5px;
+    margin: 5px 0 5px 0;
+}
+
+header .paypal {
+    position: relative;
+    float: right;
+    top: -5px;
+    width: 70px;
+    height: 70px;
+    background-image: url(images/PayPalCard.png);
+    background-size: 70px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+header .balance {
+    margin-right:10px;
+    position:relative;
+    float:right;
+}

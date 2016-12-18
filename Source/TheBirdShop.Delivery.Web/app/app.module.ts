@@ -8,21 +8,30 @@ import { HttpModule } from '@angular/http';
 import { DragulaModule, DragulaService } from 'ng2-dragula/ng2-dragula';
 
 import { AppComponent } from "./app.component";
-import { ShopService } from './shop.service';
+import { ShopComponent } from './shop.component';
 import { BirdComponent } from './bird.component';
+
+import { ShopService } from './shop.service';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
     imports: [    
         BrowserModule,
         FormsModule,
-        HttpModule,
+        HttpModule,        
+        AppRoutingModule,
         DragulaModule     
     ],
     declarations: [
         AppComponent,
-        BirdComponent 
+        BirdComponent,
+        ShopComponent
     ],
-    providers: [ShopService, DragulaService],
+    providers: [
+        ShopService,
+        DragulaService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

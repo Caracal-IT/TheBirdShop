@@ -10,22 +10,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-require("rxjs/add/operator/toPromise");
+var Observable_1 = require("rxjs/Observable");
 var ShopService = (function () {
     function ShopService(http) {
         this.http = http;
-        this.headers = new http_1.Headers({ "Content-Type": "application/json" });
-        this.shopUrl = "api/shop"; // URL to web api
+        this.headers = new http_1.Headers({
+            "Content-Type": "application/json",
+            "Cache-Control": "no-cache, no-store, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0"
+        });
+        this.shopUrl = "api/shop";
     }
     ShopService.prototype.getBirds = function () {
-        return this.http.get(this.shopUrl)
-            .toPromise()
-            .then(function (response) { return response.json(); })
+        return this.http.get(this.shopUrl, { headers: this.headers })
+            .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
     ShopService.prototype.handleError = function (error) {
-        console.error('An error occurred', error); // for demo purposes only
-        return Promise.reject(error.message || error);
+        var errMsg = error instanceof http_1.Response ? this.getResponseErrorMessage(error) : this.getErrorMessage(error);
+        console.error(errMsg);
+        return Observable_1.Observable.throw(errMsg);
+    };
+    ShopService.prototype.getResponseErrorMessage = function (error) {
+        var body = error.json() || '';
+        var err = body.error || JSON.stringify(body);
+        return error.status + " - " + (error.statusText || '') + " " + err;
+    };
+    ShopService.prototype.getErrorMessage = function (error) {
+        return error.message ? error.message : error.toString();
     };
     return ShopService;
 }());

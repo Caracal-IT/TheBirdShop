@@ -22,7 +22,8 @@ __decorate([
 BirdComponent = __decorate([
     core_1.Component({
         selector: "bird",
-        template: "\n        <div *ngIf=\"bird\" class=\"bird\" style=\"margin:5px auto 5px auto\">\n                    <i class=\"sprite sprite-birdSprite{{bird.id}}\"></i>\n                    <div style=\"position:relative;float:right;top:-90px;\">\n                        <div>\n                            <input class=\"checkbox-custom\" type=\"checkbox\" [checked]=\"bird.chirps\">\n                            <label class=\"checkbox-custom-label\">Chirps</label><br />\n                        </div>\n                        <div>\n                            <input class=\"checkbox-custom\" type=\"checkbox\" [checked]=\"bird.flies\">\n                            <label class=\"checkbox-custom-label\">Flies</label><br />\n                        </div>\n                        <div>\n                            <input class=\"checkbox-custom\" type=\"checkbox\" [checked]=\"bird.talks\">\n                            <label class=\"checkbox-custom-label\">Talks</label>\n                        </div>\n                    </div>\n                    {{bird.name}}\n                </div>\n        "
+        styleUrls: ['./app/bird.component.css'],
+        templateUrl: './app/bird.component.html'
     }),
     __metadata("design:paramtypes", [])
 ], BirdComponent);

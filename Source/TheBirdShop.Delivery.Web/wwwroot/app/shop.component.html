@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-sm-4">My Birds</div>
+    <div class="col-sm-4">Transfer Cage</div>
+    <div class="col-sm-4">Available Birds</div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="bird-cage" [dragula]='"bag1"' id="1">
+            <div *ngFor="let bird of birds" id="{{bird.id}}">
+                <bird *ngIf="bird.basket == 1" [bird]="bird"></bird>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="bird-cage" [dragula]='"bag1"' id="2">
+            <div *ngFor="let bird of birds" id="{{bird.id}}">
+                <bird *ngIf="bird.basket == 2" [bird]="bird"></bird>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="bird-cage" [dragula]='"bag1"' id="3">
+            <div *ngFor="let bird of birds" id="{{bird.id}}">
+                <bird *ngIf="bird.basket == 3" [bird]="bird"></bird>
+            </div>
+        </div>
+    </div>
+</div>

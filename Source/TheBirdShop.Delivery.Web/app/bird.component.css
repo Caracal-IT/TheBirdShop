@@ -1,0 +1,57 @@
+﻿.bird {
+    width: 175px;
+    border: 1px solid black;
+    padding: 5px 10px 5px 5px;
+    margin-bottom: 10px;
+}
+
+.sprite {
+    width: 90px;
+    height: 90px;
+    background-image: url(images/birdSprite.jpg);
+    background-size: 450px;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-birdSprite1 {
+    background-position: -45px -44px;
+}
+
+.sprite-birdSprite2 {
+    background-position: -143px -44px;
+}
+
+.sprite-birdSprite3 {
+    background-position: -232px -44px;
+}
+
+.sprite-birdSprite4 {
+    background-position: -315px -44px;
+}
+
+.sprite-birdSprite5 {
+    background-position: -45px -139px;
+}
+
+.sprite-birdSprite6 {
+    background-position: -133px -138px;
+}
+
+.sprite-birdSprite7 {
+    background-position: -232px -138px;
+}
+
+.sprite-birdSprite8 {
+    background-position: -315px -136px;
+}
+
+.sprite-birdSprite9 {
+    background-position: -46px -230px;
+}
+
+.sprite-birdSprite10 {
+    background-position: -140px -230px;
+}
+
+

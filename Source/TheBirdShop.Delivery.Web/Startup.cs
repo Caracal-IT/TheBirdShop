@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Net.Http.Headers;
 
 namespace TheBirdShop.Delivery.Web
 {
@@ -34,10 +35,10 @@ namespace TheBirdShop.Delivery.Web
                 if(context.Response.StatusCode == 404 && !System.IO.Path.HasExtension(context.Request.Path.Value)) {
                     context.Request.Path = "/index.html";
                     await next();
-                }
+                }               
             });
 
-            app.UseStaticFiles();
+            app.UseStaticFiles();            
             app.UseMvcWithDefaultRoute();
         }
     }
